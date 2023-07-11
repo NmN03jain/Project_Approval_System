@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mainAdmin page</title>
+
+  <style>/* 
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    } */
+    
+    
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@1,500&family=Phudu:wght@500&family=Rubik:ital,wght@1,500&family=Shantell+Sans&display=swap');
+    
+      @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@1,500&family=Maven+Pro:wght@500&family=Phudu:wght@500&family=Rubik:ital,wght@1,500&display=swap');
+    
+    body{
+        /* background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg'); */
+    
+        background-image: url("img5.jpg"); 
+      background-color: #fc1717;
+      height: 100%; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: cover;
+        padding:50px;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    .oneimg{
+        height: 2rem;
+        width: 3.5rem;
+        margin-top: 15px;
+    }
+    
+    .navbar-form{
+        padding-left: 11rem;
+    }
+    .navbar{
+        border-radius: 30px;
+    }
+    .chan{
+        font-weight: bold;
+        font-size: 2rem;
+        color: white;
+        font-family: 'Maven Pro', sans-serif;
+        margin-left: 30px;
+    
+    }
+    .welcom{
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card1{
+        text-align: center;
+        height: 50%;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        border-radius: 30px;
+        width: 70%;
+       
+    }
+    .just{
+        font-family: 'Rubik', sans-serif;
+        color: rgb(255, 255, 255);
+    }
+    .just1{
+        font-family: 'Rubik', sans-serif;
+        color: rgb(255, 255, 255);
+        margin-left: 100px;
+        margin-bottom: 50px;
+    }
+    .chan:hover{
+        background-color: none;
+        color:none;
+        border-radius: 50px;
+    }
+    .chan1{
+        font-weight: bold;
+        font-size: 2rem;
+        color: white;
+        font-family: 'Maven Pro', sans-serif;
+        
+    }
+    .chan1:hover{
+        background-color: none;
+        color:none;
+        border-radius: 50px;
+    }
+    .chan:focus{
+        background-color: none;
+    }
+    .para{
+        margin: auto;
+        text-align: center;
+        max-width: 70%;
+        color: rgb(148, 160, 220);
+        font-size: 22px;
+        font-family: 'Karla', sans-serif;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    
+    
+    /* card pop up */
+    .upload1{
+        margin-top: 35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        /* border: 1px solid #ccc; */
+        border-radius: 51px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgb(234, 234, 234);
+        /* box-shadow: 0 2px 2px rgba(4, 5, 0, 0.3); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        overflow: hidden;
+        width: 60%;
+      }
+      .card h1{
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+      }
+      
+      .card-info {
+        padding: 10px;
+      }
+      
+      .card-title {
+        font-size: 2rem;
+        display: block;
+      }
+      
+      .card-description {
+        margin: 0;
+        font-size: 2rem;
+      }
+      .card-files{
+        font-size: 2rem;
+      }
+      
+      .card-button {
+        background-color: #ffffff;
+        border: 5px solid green;
+        border-radius:20px;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        /* text-align: center; */
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2rem;
+        margin-top: 10px;   
+        cursor: pointer;
+      }
+      /* modal */
+      
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+      }
+      
+      .modal-content {
+        background-color: #e1c8e8;
+        margin: 10% auto;
+        padding: 20px;
+        border: 3px solid #000000;
+        width: 80%;
+        max-width: 600px;
+        position: relative;
+        height: 100%;   
+        
+        /* overflow-y: auto; */
+      }
+      
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 4rem;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        cursor:pointer;
+      }
+      .title1{
+        display: block;
+        margin-bottom: 10px;
+        color: black;
+        font-size: 2rem;
+        font-weight: bold;
+        border: 3px solid rgb(1, 1, 1);
+        border-radius: 3px;
+      }
+      .description1{
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        border: 3px solid rgb(1, 1, 1);
+        border-radius: 3px;
+      }
+      .fole{
+        margin-top: 15px;
+        font-size: 2rem;
+        
+      }
+      .fle{
+        margin-top: 15px;
+        background-color: #000000;
+        font-size: 2rem;
+      }
+      .fle:hover{
+        background-color: rgb(0, 0, 0);
+      }
+      .hel{
+        margin-right: 10px;
+      }
+     
+
+  </style>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="./hel.css">
+  <script src="index.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <h1>hello</h1>
+  <div class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="navbar-header">
+            <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span
+                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <a href="#" class="navbar-brand chan1">Project Approval System</a>
+            <img class="oneimg" src="Images/pa1.png" alt="">
+          </div>
+
+          <div class="navbar-collapse collapse" id="mobile_menu">
+            <ul class="nav navbar-nav">
+              <li><a href="#"></a></li>
+
+
+              <li><a href="#" class="dropdown-toggle chan" data-toggle="dropdown">Team <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Lakshya Gupta</a></li>
+                  <li><a href="#">Kuldeep Singh Rathore</a></li>
+                  <li><a href="#">Pradyumn Tahekar</a></li>
+                  <li><a href="#">Naman Jain</a></li>
+                </ul>
+              </li>
+
+
+
+              <li><a class="chan" href="#upload">Check Projects</a></li>
+              <li><a href="#" class="dropdown-toggle chan" data-toggle="dropdown">Panel List <span
+                    class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Mr. Rakesh Verma(PC)</a></li>
+                  <li><a href="#">Ms. Nisha Bhati</a></li>
+                  <li><a href="#">Ms. Megha Birthare</a></li>
+                  <li><a href="#">Ms. Praveena Joshi</a></li>
+                  <li><a href="#">Ms. Lalita Bargadiya</a></li>
+                </ul>
+              </li>
+
+
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a class="chan" href="/index2">Logout</a></li>
+            </ul>
+
+
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="welcom">
+    <div class="card1">
+      <h1 class="just">Hello Faculties .........</h1>
+      <h3 class="just1">Approve and Deny.....</h3>
+      <p class="para">
+        You can review student projects from your institution , approve or reject them based on your experience, and offer correctional feedback.
+      </p>
+    </div>
+  </section>
+
+  <section class="upload1" id="upload">
+
+    <div class="card">
+      <h1>ADD YOUR PROJECT</h1>
+      <div class="card-info">
+        <h3 class="card-title">Card Title</h3>
+        <p class="card-description">Card Description</p>
+        <p class="card-files">Upload files</p>
+        <button class="card-button" onclick="showDetails()">Upload Your Project</button>
+      </div>
+    </div>
+
+    <div id="details" class="modal">
+
+      <div class="modal-content">
+        <form action="/main" method="post" enctype="multipart/form-data">
+          <span class="close" onclick="hideDetails()">&times;</span>
+
+          <label for="title">Title</label>
+          <input name="title" class="title1"></input>
+
+          <label for="description">description</label>
+          <textarea class="description1" name="description" cols="30" rows="10"></textarea>
+
+          <input type="file" class="fole" name="image" id="file-upload" required />
+
+          <input type="submit" value="submit" class="btn btn-primary fle" />
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <% if (users !='' ) { %>
+    <section class="table">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">ID</th>
+            <th scope="col">Title Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">File</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(function(row,index){ %>
+            <tr>
+              <th scope="row">
+                <%= index %>
+              </th>
+              <td>
+                <%= row.title %>
+              </td>
+              <td>
+                <%= row.description %>
+              </td>
+              <td> <img src="<%= row.image %>" width="50px" alt=""> </td>
+              <td>
+                <a href="/edit/<%= row._id %>" class="text-success hel"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                <a href="/delete/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </section>
+    <% } else { %>
+      <h1 class="text-center text-secondary mt-5 fall "> No Project is Submited <Submited></Submited>
+      </h1>
+      <% } %>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+          integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.js"></script>
+
+        <script>
+          $(document).ready(function () {
+            $("table").DataTable({
+              order: [0, 'desc']
+            })
+          })
+          var c = document.getElementsByClassName("table")[0]
+          c.style.fontFamily = "Tahoma, sans-serif";
+          c.style.fontSize = "2rem";
+
+        </script>
+
+
+</body>
+
+</html>

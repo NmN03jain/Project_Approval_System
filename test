@@ -1,0 +1,30 @@
+const MongoClient = require('mongodb').MongoClient;
+const Grid = require('gridfs-stream');
+const fs = require('fs');
+
+const url = 'mongodb://localhost:27017/mydb';
+const filename = 'test.pdf';
+const filepath = '/path/to/test.pdf';
+
+MongoClient.connect(url, function(err, client) {
+  if (err) throw err;
+
+  const db = client.db('mydb');
+  const gfs = Grid(db, require('mongodb'));
+
+  const writestream = gfs.createWriteStream({
+    filename: filename
+  });
+
+  fs.createReadStream(filepath).pipe(writestream);
+
+  writestream.on('close', function(file) {
+    console.log('File ' + filename + ' is saved to MongoDB');
+    client.close();
+  });
+});
+
+
+<% if (users != '') { %>
+  <% } else { %>
+    <% } %> 
